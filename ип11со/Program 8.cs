@@ -6,27 +6,19 @@ using System.Threading.Tasks;
 
 namespace ип1111
 {
-    // Пользовательский класс исключения
     class CharArrayException : Exception
     {
-        public char[] CharArray { get; } // Символьный массив
+        public char[] CharArray { get; } 
 
-        // Конструктор, принимающий размер массива
+        
         public CharArrayException(int size)
         {
             CharArray = new char[size];
 
-            // Заполняем массив последовательностью букв (начиная с 'A')
             for (int i = 0; i < size; i++)
             {
                 CharArray[i] = (char)('A' + i);
             }
-        }
-
-        // Переопределяем ToString() для удобного вывода информации
-        public override string ToString()
-        {
-            return "Пользовательское исключение. Массив: " + new string(CharArray);
         }
     }
 
