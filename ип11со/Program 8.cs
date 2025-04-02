@@ -31,16 +31,13 @@ namespace ип1111
                 Console.Write("Введите размер символьного массива: ");
                 int size = int.Parse(Console.ReadLine());
 
-                // Создаем исключение с нужным размером массива
                 throw new CharArrayException(size);
             }
             catch (CharArrayException ex)
             {
-                // Обработка нашего исключения - вывод массива
                 Console.WriteLine("Содержимое массива из исключения:");
                 Console.WriteLine(new string(ex.CharArray));
-
-                // Альтернативный вариант вывода через переопределенный ToString()
+                
                 Console.WriteLine(ex.ToString());
             }
             catch (FormatException)
